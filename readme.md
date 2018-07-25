@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install @nutshell-lab/sns-messenger
+$ npm install @nutshelllab/sns-messenger
 ```
 
 
