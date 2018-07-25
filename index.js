@@ -12,11 +12,11 @@ const resolve = async name => {
   }
 }
 
-const send = (topic, subject, message) =>
-  sns.publish({ TopicArn: topic, Subject: subject, Message: message }).promise()
+const send = (topic, message, options) =>
+  sns.publish({ TopicArn: topic, Message: message, ...options }).promise()
 
-export default async (channel, subject, payload = {}) => {
+export default async (channel, payload = {}, options = {}) => {
   const topic = await resolve(channel)
   const message = JSON.stringify(payload)
-  return send(topic, subject, message)
+  return send(topic, message, options)
 }

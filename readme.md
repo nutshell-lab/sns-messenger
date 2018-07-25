@@ -16,14 +16,14 @@ $ npm install @nutshelllab/sns-messenger
 const send = require('sns-messenger');
 
 (async () => {
-  await send('my-topic', 'subject', { foo: 'bar' });
+  await send('my-topic', { foo: 'bar' }, { Subject: 'foobar' });
 })
 ```
 
 
 ## API
 
-### snsMessenger(topic, subject, payload)
+### snsMessenger(topic, payload, options)
 
 #### topic
 
@@ -31,17 +31,17 @@ Type: `string`
 
 SNS topic to send message
 
-#### subject
-
-Type: `string`
-
-Message subject
-
 ##### payload
 
 Type: `Object`
 
 Message payload
+
+##### options
+
+Type: `Object`
+
+Extra AWS SNS parameters, see [AWSJavaScriptSDK documentation](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/SNS.html#publish-property)
 
 
 ## License
