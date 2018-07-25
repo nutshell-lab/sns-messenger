@@ -1,6 +1,6 @@
 {
 	"name": "@nutshelllab/sns-messenger",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Module to send messages to AWS SNS using AWS System Manager to store channels aliases",
 	"license": "MIT",
 	"repository": "https://github.com/nutshell-lab/sns-messenger",
@@ -9,11 +9,15 @@
 		"email": "victor.rebiardcrepin@gmail.com",
 		"url": "https://nutshell-lab.com"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"engines": {
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && nyc ava"
+		"test": "xo && nyc ava",
+		"release": "np"
 	},
 	"files": [
 		"index.js"
@@ -34,6 +38,7 @@
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^11.0.0",
 		"eslint-plugin-standard": "^3.1.0",
+		"np": "^3.0.4",
 		"nyc": "^12.0.0",
 		"xo": "^0.21.0"
 	},
