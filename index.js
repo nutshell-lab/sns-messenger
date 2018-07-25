@@ -3,14 +3,14 @@ import { SNS, SSM } from 'aws-sdk'
 const sns = new SNS({ apiVersion: '2010-03-31' })
 const ssm = new SSM({ apiVersion: '2014-11-06' })
 
-const resolve = name =>
-  ssm
-    .getParameter({ Name: `sns-${name}` })
-    .promise()
-    .then(result => result.Value)
-    .catch(() => {
-      throw new Error(`Unable to resolve channel '${name}'`)
-    })
+const resolve = async name => {
+  try {
+    const param = await ssm.getParameter({ Name: `sns-${name}` }).promise()
+    return param.Value
+  } catch (err) {
+    throw new Error(`Unable to resolve channel '${name}'`)
+  }
+}
 
 const send = (topic, subject, message) =>
   sns.publish({ TopicArn: topic, Subject: subject, Message: message }).promise()
