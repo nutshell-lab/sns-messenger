@@ -15,7 +15,9 @@ $ npm install @nutshelllab/sns-messenger
 ```js
 const send = require('sns-messenger');
 
-await send('my-topic', 'subject', { foo: 'bar' });
+(async () => {
+  await send('my-topic', 'subject', { foo: 'bar' });
+})
 ```
 
 
