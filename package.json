@@ -9,28 +9,29 @@
 		"email": "victor.rebiardcrepin@gmail.com",
 		"url": "https://nutshell-lab.com"
 	},
+	"keywords": [
+		"AWS",
+		"SNS",
+		"SSM"
+	],
 	"publishConfig": {
 		"access": "public"
 	},
 	"engines": {
 		"node": ">=8"
 	},
+	"main": "dist.js",
 	"scripts": {
 		"test": "xo && nyc ava",
+		"build": "babel index.js -o dist.js",
 		"release": "np"
 	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"AWS",
-		"SNS",
-		"SSM"
-	],
 	"dependencies": {
 		"aws-sdk": "^2.280.1"
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.0.0-beta.56",
+		"@babel/core": "^7.0.0-beta.56",
 		"@babel/preset-env": "^7.0.0-beta.54",
 		"@babel/register": "^7.0.0-beta.54",
 		"ava": "1.0.0-beta.4",
@@ -52,7 +53,8 @@
 		"env": "node",
 		"space": true,
 		"semicolon": false,
-		"extends": "prettier-standard"
+		"extends": "prettier-standard",
+		"ignores": ["dist.js"]
 	},
 	"ava": {
 		"require": [
