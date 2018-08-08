@@ -1,6 +1,6 @@
 {
 	"name": "@nutshelllab/sns-messenger",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Module to send messages to AWS SNS using AWS System Manager to store channels aliases",
 	"license": "MIT",
 	"repository": "https://github.com/nutshell-lab/sns-messenger",

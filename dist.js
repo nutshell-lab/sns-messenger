@@ -16,10 +16,12 @@ const ssm = new _awsSdk.SSM({
 
 const resolve = async name => {
   try {
-    const param = await ssm.getParameter({
+    const {
+      Parameter
+    } = await ssm.getParameter({
       Name: `sns-${name}`
     }).promise();
-    return param.Value;
+    return Parameter.Value;
   } catch (err) {
     throw new Error(`Unable to resolve channel '${name}'`);
   }

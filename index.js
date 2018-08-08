@@ -5,8 +5,8 @@ const ssm = new SSM({ apiVersion: '2014-11-06' })
 
 const resolve = async name => {
   try {
-    const param = await ssm.getParameter({ Name: `sns-${name}` }).promise()
-    return param.Value
+    const { Parameter } = await ssm.getParameter({ Name: `sns-${name}` }).promise()
+    return Parameter.Value
   } catch (err) {
     throw new Error(`Unable to resolve channel '${name}'`)
   }
