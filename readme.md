@@ -1,6 +1,6 @@
 # sns-messenger [![Build Status](https://travis-ci.org/nutshell-lab/sns-messenger.svg?branch=master)](https://travis-ci.org/nutshell-lab/sns-messenger) [![codecov](https://codecov.io/gh/nutshell-lab/sns-messenger/badge.svg?branch=master)](https://codecov.io/gh/nutshell-lab/sns-messenger?branch=master)
 
-> Module to send messages to AWS SNS using AWS System Manager to store channels aliases
+> Module to send messages to AWS SNS using AWS System Manager to store channels aliases/arn
 
 
 ## Install
@@ -13,23 +13,30 @@ $ npm install @nutshelllab/sns-messenger
 ## Usage
 
 ```js
-const send = require('sns-messenger');
+import send from '@nutshelllab/sns-messenger'
+
+const arn => topic => {
+  const region = process.env.AWS_REGION
+  const account = process.env.AWS_ACCOUNT_ID
+  const stage = process.env.SLS_STAGE
+  return `arn:aws:sns:${region}:${account}:${topic}-${stage}`
+}
 
 (async () => {
-  await send('my-topic', { foo: 'bar' }, { Subject: 'foobar' });
+  await send(arn('my-topic'), { foo: 'bar' }, { Subject: 'foobar' })
 })
 ```
 
 
 ## API
 
-### snsMessenger(topic, payload, options)
+### snsMessenger(topicArn, payload, options)
 
-#### topic
+#### topicArn
 
 Type: `string`
 
-SNS topic to send message
+SNS topic's arn to send message
 
 ##### payload
 
