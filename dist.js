@@ -10,22 +10,6 @@ var _awsSdk = require("aws-sdk");
 const sns = new _awsSdk.SNS({
   apiVersion: '2010-03-31'
 });
-const ssm = new _awsSdk.SSM({
-  apiVersion: '2014-11-06'
-});
-
-const resolve = async name => {
-  try {
-    const {
-      Parameter
-    } = await ssm.getParameter({
-      Name: `sns-${name}`
-    }).promise();
-    return Parameter.Value;
-  } catch (err) {
-    throw new Error(`Unable to resolve channel '${name}'`);
-  }
-};
 
 const send = (topic, message, options) => sns.publish({
   TopicArn: topic,
@@ -33,8 +17,7 @@ const send = (topic, message, options) => sns.publish({
   ...options
 }).promise();
 
-var _default = async (channel, payload = {}, options = {}) => {
-  const topic = await resolve(channel);
+var _default = async (topic, payload = {}, options = {}) => {
   const message = JSON.stringify(payload);
   return send(topic, message, options);
 };

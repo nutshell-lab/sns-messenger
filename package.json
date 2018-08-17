@@ -24,6 +24,7 @@
 	"scripts": {
 		"test": "xo",
 		"build": "babel index.js -o dist.js",
+		"prerelease": "yarn build",
 		"release": "np"
 	},
 	"dependencies": {
