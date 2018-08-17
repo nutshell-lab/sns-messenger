@@ -1,6 +1,6 @@
 # sns-messenger [![Build Status](https://travis-ci.org/nutshell-lab/sns-messenger.svg?branch=master)](https://travis-ci.org/nutshell-lab/sns-messenger) [![codecov](https://codecov.io/gh/nutshell-lab/sns-messenger/badge.svg?branch=master)](https://codecov.io/gh/nutshell-lab/sns-messenger?branch=master)
 
-> Module to send messages to AWS SNS using AWS System Manager to store channels aliases/arn
+> Just sugar syntax over AWS SNS.send()
 
 
 ## Install
