@@ -1,6 +1,6 @@
 {
 	"name": "@nutshelllab/sns-messenger",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Just sugar syntax over AWS SNS.send()",
 	"license": "MIT",
 	"repository": "https://github.com/nutshell-lab/sns-messenger",
@@ -38,7 +38,7 @@
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^11.0.0",
 		"eslint-plugin-standard": "^3.1.0",
-		"np": "^3.0.4",
+		"np": "^5.0.1",
 		"xo": "^0.21.0"
 	},
 	"xo": {
