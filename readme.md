@@ -15,7 +15,7 @@ $ npm install @nutshelllab/sns-messenger
 ```js
 import send from '@nutshelllab/sns-messenger'
 
-const arn => topic => {
+const arn = topic => {
   const region = process.env.AWS_REGION
   const account = process.env.AWS_ACCOUNT_ID
   const stage = process.env.SLS_STAGE
@@ -53,4 +53,4 @@ Extra AWS SNS parameters, see [AWSJavaScriptSDK documentation](https://docs.aws.
 
 ## License
 
-MIT © [Victor Rebiard--Crépin](https://nutshell-lab.com)
+MIT © [Nutshell](https://nutshell-lab.com)
