@@ -1,18 +1,18 @@
 {
 	"name": "@nutshelllab/sns-messenger",
 	"version": "2.0.1",
-	"description": "Module to send messages to AWS SNS using AWS System Manager to store channels aliases",
+	"description": "Just sugar syntax over AWS SNS.send()",
 	"license": "MIT",
 	"repository": "https://github.com/nutshell-lab/sns-messenger",
 	"author": {
-		"name": "Victor Rebiard--Crépin",
-		"email": "victor.rebiardcrepin@gmail.com",
+		"name": "Nutshell",
+		"email": "contact@nutshell-lab.com",
 		"url": "https://nutshell-lab.com"
 	},
 	"keywords": [
-		"AWS",
-		"SNS",
-		"SSM"
+		"aws",
+		"sns",
+		"nodejs"
 	],
 	"publishConfig": {
 		"access": "public"
