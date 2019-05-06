@@ -14,40 +14,48 @@
 		"sns",
 		"nodejs"
 	],
-	"publishConfig": {
-		"access": "public"
-	},
 	"engines": {
 		"node": ">=8"
 	},
-	"main": "dist.js",
 	"scripts": {
 		"test": "xo",
-		"build": "babel index.js -o dist.js",
-		"prerelease": "yarn build",
-		"release": "np"
+		"build": "pack build",
+		"release": "pack publish"
 	},
 	"dependencies": {
 		"aws-sdk": "^2.280.1"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.0.0-beta.56",
-		"@babel/core": "^7.0.0-beta.56",
-		"@babel/preset-env": "^7.0.0-beta.54",
-		"@babel/register": "^7.0.0-beta.54",
+		"@pika/pack": "^0.3.7",
+		"@pika/plugin-build-node": "^0.3.16",
+		"@pika/plugin-build-types": "^0.3.16",
+		"@pika/plugin-build-web": "^0.3.16",
+		"@pika/plugin-standard-pkg": "^0.3.16",
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^11.0.0",
 		"eslint-plugin-standard": "^3.1.0",
-		"np": "^5.0.1",
 		"xo": "^0.21.0"
+	},
+	"@pika/pack": {
+		"pipeline": [
+			[
+				"@pika/plugin-standard-pkg"
+			],
+			[
+				"@pika/plugin-build-node"
+			],
+			[
+				"@pika/plugin-build-web"
+			],
+			[
+				"@pika/plugin-build-types"
+			]
+		]
 	},
 	"xo": {
 		"env": "node",
 		"space": true,
 		"semicolon": false,
-		"extends": "prettier-standard",
-		"ignores": [
-			"dist.js"
-		]
+		"extends": "prettier-standard"
 	}
 }
