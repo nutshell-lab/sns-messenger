@@ -9,6 +9,9 @@
 		"email": "contact@nutshell-lab.com",
 		"url": "https://nutshell-lab.com"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"keywords": [
 		"aws",
 		"sns",
@@ -29,7 +32,7 @@
 		"@pika/pack": "^0.3.7",
 		"@pika/plugin-build-node": "^0.3.16",
 		"@pika/plugin-build-types": "^0.3.16",
-		"@pika/plugin-build-web": "^0.3.16",
+		"@pika/plugin-copy-assets": "^0.3.16",
 		"@pika/plugin-standard-pkg": "^0.3.16",
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^11.0.0",
@@ -45,10 +48,15 @@
 				"@pika/plugin-build-node"
 			],
 			[
-				"@pika/plugin-build-web"
+				"@pika/plugin-build-types"
 			],
 			[
-				"@pika/plugin-build-types"
+				"@pika/plugin-copy-assets",
+				{
+					"files": [
+						"readme.md"
+					]
+				}
 			]
 		]
 	},
