@@ -7,7 +7,7 @@
 ## Install
 
 ```
-$ yarn add @nutshelllab/sns-messenger
+yarn add @nutshelllab/sns-messenger
 ```
 
 
