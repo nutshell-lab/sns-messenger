@@ -1,4 +1,4 @@
-# sns-messenger [![Build Status](https://travis-ci.org/nutshell-lab/sns-messenger.svg?branch=master)](https://travis-ci.org/nutshell-lab/sns-messenger) [![codecov](https://codecov.io/gh/nutshell-lab/sns-messenger/badge.svg?branch=master)](https://codecov.io/gh/nutshell-lab/sns-messenger?branch=master)
+# sns-messenger [![Build Status](https://travis-ci.org/nutshell-lab/sns-messenger.svg?branch=master)](https://travis-ci.org/nutshell-lab/sns-messenger) [![Maintainability](https://api.codeclimate.com/v1/badges/10d58a30e59d0062f915/maintainability)](https://codeclimate.com/github/nutshell-lab/sns-messenger/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/10d58a30e59d0062f915/test_coverage)](https://codeclimate.com/github/nutshell-lab/sns-messenger/test_coverage)
 
 > Just sugar syntax over AWS SNS.send()
 
