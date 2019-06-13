@@ -37,7 +37,7 @@
 		"eslint-config-prettier-standard": "^2.0.0",
 		"eslint-config-standard": "^11.0.0",
 		"eslint-plugin-standard": "^3.1.0",
-		"xo": "^0.21.0"
+		"xo": "^0.24.0"
 	},
 	"@pika/pack": {
 		"pipeline": [
